@@ -119,7 +119,7 @@
     // so we simulate a simple browser request to the GET /logout endpoint to avoid a CORS preflight request
     // when the browser tries to follow the redirect to the ID-porten /endsession URL
     var logout = function () {
-        window.location.href = "http://localhost:7000/logout";
+        window.location.replace("http://localhost:7000/logout");
     }
 </script>
 </body>
