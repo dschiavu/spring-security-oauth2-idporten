@@ -60,7 +60,7 @@ public class SimpleApplication extends WebSecurityConfigurerAdapter {
             .antMatcher("/**")
                .addFilterBefore(idPortenSsoFilter(), BasicAuthenticationFilter.class)
             .authorizeRequests()
-               .antMatchers("/", "/login**", "/webjars/**", "/error**")
+               .antMatchers("/", "/index.html**", "/login**", "/webjars/**", "/error**")
                .permitAll()
             .anyRequest()
                .authenticated()

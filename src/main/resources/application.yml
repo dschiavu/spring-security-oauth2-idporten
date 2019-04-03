@@ -22,7 +22,7 @@ idporten.security.oauth2:
     authenticationScheme: header
     clientAuthenticationScheme: form
     scope: [openid profile]
-    postLogoutRedirectUri: http://localhost:7000/
+    postLogoutRedirectUri: http://localhost:7000/index.html
 
   resource:
     userInfoUri: https://oidc-ver1.difi.no/idporten-oidc-provider/userinfo

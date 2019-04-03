@@ -115,13 +115,11 @@
         }
     });
 
+    // Temporary workaround as ID-porten /endsession endpoint doesn't support CORS (so we can't use Ajax)
+    // so we simulate a simple browser request to the GET /logout endpoint to avoid a CORS preflight request
+    // when the browser tries to follow the redirect to the ID-porten /endsession URL
     var logout = function () {
-        $.post("/logout", function () {
-            $("#user").html('');
-            $(".unauthenticated").show();
-            $(".authenticated").hide();
-        })
-        return true;
+        window.location.href = "http://localhost:7000/logout";
     }
 </script>
 </body>
