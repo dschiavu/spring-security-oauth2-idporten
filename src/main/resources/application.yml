@@ -1,0 +1,28 @@
+#
+# Application settings
+#
+spring.main.allow-bean-definition-overriding: true
+
+server.port: 7000
+
+logging.level:
+  org.springframework.security: DEBUG
+  web: DEBUG
+
+#
+# ID-Porten Single Sign-on (SSO) OAuth2/OpenID settings
+#
+idporten.security.oauth2:
+  client:
+    clientId: client-id
+    clientSecret: client-secret
+    accessTokenUri: https://oidc-ver1.difi.no/idporten-oidc-provider/token
+    userAuthorizationUri: https://oidc-ver1.difi.no/idporten-oidc-provider/authorize
+    endSessionUri: https://oidc-ver1.difi.no/idporten-oidc-provider/endsession
+    authenticationScheme: header
+    clientAuthenticationScheme: form
+    scope: [openid profile]
+    postLogoutRedirectUri: http://localhost:7000/
+
+  resource:
+    userInfoUri: https://oidc-ver1.difi.no/idporten-oidc-provider/userinfo
